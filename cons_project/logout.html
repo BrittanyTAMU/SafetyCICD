@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>you are logged out</h1>
+    <a href="https://construction.auth.us-east-1.amazoncognito.com/login?client_id=7hprrj4gufvqe321r3u0trd3km&response_type=code&scope=email+openid&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcons_project%2Fdashboard.html">Log back in</a>
+    
+    <script>
+        // Clear tokens from local storage
+        // localStorage.removeItem('authToken');
+        // localStorage.removeItem('tokenExpirationTime');
+        
+        // Redirect to login page after logout
+   window.location.href = 'https://construction.auth.us-east-1.amazoncognito.com/login?client_id=7hprrj4gufvqe321r3u0trd3km&response_type=code&scope=email+openid&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcons_project%2Fdashboard.html';
+ </script>
+ </body>
+</html>

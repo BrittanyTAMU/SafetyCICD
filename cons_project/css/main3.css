@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    height: 190px;
+    border: 1px solid lightgrey;
+}
+
+header img {
+   width: 100%;
+    max-width: 200px;
+    height: auto;
+    float: left;
+   
+}
+
+header button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+header button:hover {
+    background: #0056b3;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* text-align: center; */
+}
+
+ul.check-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+}
+
+ul.check-list li {
+    position: relative;
+    padding-left: 25px; /* Adjust based on the size of the check mark */
+}
+
+ul.check-list li::before {
+    content: "\2713"; /* Unicode character for check mark */
+    position: absolute;
+    left: 0;
+    color: green; /* Change color if needed */
+    font-size: 1.2em; /* Adjust size if needed */
+    line-height: 1; /* Adjust line-height if needed */
+}
+
+
+.first {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.first h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.first ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.first ul li {
+    margin-bottom: 10px;
+}
+
+.safety-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background: f5f5f5 ; /* Background color */
+    color: black; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+    font-size: 1.2em; /* Adjust font size if needed */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    margin: 10px 0; /* Adjust margin if needed */
+    cursor: default; /* Change cursor to default */
+}
+
+.second {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.second form {
+    margin-bottom: 10px;
+}
+
+.second form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.second .privacy {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.second .privacy a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.second .privacy a:hover {
+    text-decoration: underline;
+}
+
+.second button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.second button:hover {
+    background: #218838;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(248, 245, 245);
+}
+
+.align{
+    text-align: center;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-item div {
+    flex: 1;
+}
+
+.feature-img {
+    width: 200px;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-item,
+    .feature-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-item.reverse img {
+        order: 1;
+    }
+}
+
+
+.benefits {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.benefits div {
+    flex: 1;
+    padding: 20px;
+}
+
+.benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.benefits ul li {
+    margin-bottom: 10px;
+}
+
+.benefits ul li span {
+    font-weight: bold;
+}
+
+.leaders{
+    width: 50%;
+}
+
+.fourth-img{
+    width: 20%;
+    
+}
+
+.faq {
+    padding: 20px;
+    background-color: rgb(248, 245, 245);
+
+}
+
+.faq h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.faq ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.faq ul li {
+    margin-bottom: 10px;
+}
+
+.faq ul li a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.faq ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .eight-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background: #0056b3;
+}
