@@ -186,7 +186,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
     message: document.getElementById('message').value,
   };
 
-  const apiUrl = "https://mgkjtjviea.execute-api.us-east-1.amazonaws.com/default/Safety-CICD/send-email";  // Your API Gateway URL
+  const apiUrl = "https://vgu2jhmyof.execute-api.us-east-1.amazonaws.com/prod";  // Your API Gateway URL
 
   try {
     const response = await fetch(apiUrl, {
