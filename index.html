@@ -144,37 +144,72 @@
           </div>
 
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-            <form action="https://mgkjtjviea.execute-api.us-east-1.amazonaws.com/default/Safety-CICD/send-email" method="post" class="php-email-form">
-              <h3>Talk to one of our product experts</h3>
-              <p>By submitting your contact details, you agree that SafetyFirst may contact you using the details provided and send you promotional messages with offers, updates, and other marketing messages in accordance with our <a href="#">privacy policy</a></p>
-              <div class="row gy-3">
+           <form id="contactForm" class="php-email-form">
+  <h3>Talk to one of our product experts</h3>
+  <p>By submitting your contact details, you agree that SafetyFirst may contact you using the details provided and send you promotional messages with offers, updates, and other marketing messages in accordance with our <a href="#">privacy policy</a></p>
 
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
-                </div>
+  <div class="row gy-3">
+    <div class="col-12">
+      <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+    </div>
 
-                <div class="col-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
+    <div class="col-12">
+      <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+    </div>
 
-                <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
-                </div>
+    <div class="col-12">
+      <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" required>
+    </div>
 
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
+    <div class="col-12">
+      <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required></textarea>
+    </div>
 
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
+    <div class="col-12 text-center">
+      <div class="loading">Loading</div>
+      <div class="error-message"></div>
+      <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
 
-                  <button type="submit">Get a quote</button>
-                </div>
+      <button type="submit">Get a quote</button>
+    </div>
+  </div>
+</form>
 
-              </div>
-            </form>
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();  // Prevent form submission
+
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    message: document.getElementById('message').value,
+  };
+
+  const apiUrl = "https://mgkjtjviea.execute-api.us-east-1.amazonaws.com/default/Safety-CICD/send-email";  // Your API Gateway URL
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      document.querySelector('.sent-message').style.display = 'block';
+    } else {
+      document.querySelector('.error-message').innerText = 'There was an error submitting your form.';
+      document.querySelector('.error-message').style.display = 'block';
+    }
+  } catch (error) {
+    document.querySelector('.error-message').innerText = 'Error: ' + error.message;
+    document.querySelector('.error-message').style.display = 'block';
+  }
+});
+</script>
+
           </div><!-- End Quote Form -->
 
         </div>
