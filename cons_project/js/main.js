@@ -45,52 +45,52 @@ document.addEventListener('DOMContentLoaded', () => {
   
   });
   
-  function updateDOM(data) {
-    console.log(data);
-    const projectNameElem = document.getElementById('projectName');
-    const companyNameElem = document.getElementById('companyName');
-    const dueDate1Elem = document.getElementById('dueDate1');
-    const projectName2Elem = document.getElementById('projectName2');
-    const companyName2Elem = document.getElementById('companyName2');
-    const dueDate2Elem = document.getElementById('dueDate2');
-    const myTask1Elem = document.getElementById('myTask1');
-    const myTask2Elem = document.getElementById('myTask2');
-    const myTask3Elem = document.getElementById('myTask3');
-    const myTask4Elem = document.getElementById('myTask4');
-    const myTask5Elem = document.getElementById('myTask5');
-    const myTask6Elem = document.getElementById('myTask6');
-    const myTask7Elem = document.getElementById('myTask7');
-    const myTimeline1Elem = document.getElementById('myTimeline1');
-    const myTimeline2Elem = document.getElementById('myTimeline2');
-    const myTimeline3Elem = document.getElementById('myTimeline3');
-    const myTimeline4Elem = document.getElementById('myTimeline4');
-    const myTimelineTime1Elem = document.getElementById('myTimelineTime1');
-    const myTimelineTime2Elem = document.getElementById('myTimelineTime2');
-    const myTimelineTime3Elem = document.getElementById('myTimelineTime3');
-    const myTimelineTime4Elem = document.getElementById('myTimelineTime4');
+ //function updateDOM(data) {
+   // console.log(data);
+  //   const projectNameElem = document.getElementById('projectName');
+  //   const companyNameElem = document.getElementById('companyName');
+  //   const dueDate1Elem = document.getElementById('dueDate1');
+  //   const projectName2Elem = document.getElementById('projectName2');
+  //   const companyName2Elem = document.getElementById('companyName2');
+  //   const dueDate2Elem = document.getElementById('dueDate2');
+  //   const myTask1Elem = document.getElementById('myTask1');
+  //   const myTask2Elem = document.getElementById('myTask2');
+  //   const myTask3Elem = document.getElementById('myTask3');
+  //   const myTask4Elem = document.getElementById('myTask4');
+  //   const myTask5Elem = document.getElementById('myTask5');
+  //   const myTask6Elem = document.getElementById('myTask6');
+  //   const myTask7Elem = document.getElementById('myTask7');
+  //   const myTimeline1Elem = document.getElementById('myTimeline1');
+  //   const myTimeline2Elem = document.getElementById('myTimeline2');
+  //   const myTimeline3Elem = document.getElementById('myTimeline3');
+  //   const myTimeline4Elem = document.getElementById('myTimeline4');
+  //   const myTimelineTime1Elem = document.getElementById('myTimelineTime1');
+  //   const myTimelineTime2Elem = document.getElementById('myTimelineTime2');
+  //   const myTimelineTime3Elem = document.getElementById('myTimelineTime3');
+  //   const myTimelineTime4Elem = document.getElementById('myTimelineTime4');
   
-    if (projectNameElem) projectNameElem.innerText = `Project Name: ${data.projectName || 'No data'}`;
-    if (companyNameElem) companyNameElem.innerText = `Company Name: ${data.companyName || 'No data'}`;
-    if (dueDate1Elem) dueDate1Elem.innerText = `Due Date: ${data.dueDate1 || 'No data'}`;
-    if (projectName2Elem) projectName2Elem.innerText = `Project Name: ${data.projectName2 || 'No data'}`;
-    if (companyName2Elem) companyName2Elem.innerText = `Company Name: ${data.companyName2 || 'No data'}`;
-    if (dueDate2Elem) dueDate2Elem.innerText = `Due Date: ${data.dueDate2 || 'No data'}`;
-    if (myTask1Elem) myTask1Elem.innerText = data.myTask1 || 'No data';
-    if (myTask2Elem) myTask2Elem.innerText = data.myTask2 || 'No data';
-    if (myTask3Elem) myTask3Elem.innerText = data.myTask3 || 'No data';
-    if (myTask4Elem) myTask4Elem.innerText = data.myTask4 || 'No data';
-    if (myTask5Elem) myTask5Elem.innerText = data.myTask5 || 'No data';
-    if (myTask6Elem) myTask6Elem.innerText = data.myTask6 || 'No data';
-    if (myTask7Elem) myTask7Elem.innerText = data.myTask7 || 'No data';
-    if (myTimeline1Elem) myTimeline1Elem.innerText = data.myTimeline1 || 'No data';
-    if (myTimeline2Elem) myTimeline2Elem.innerText = data.myTimeline2 || 'No data';
-    if (myTimeline3Elem) myTimeline3Elem.innerText = data.myTimeline3 || 'No data';
-    if (myTimeline4Elem) myTimeline4Elem.innerText = data.myTimeline4 || 'No data';
-    if (myTimelineTime1Elem) myTimelineTime1Elem.innerText = data.myTimelineTime1 || 'No data';
-    if (myTimelineTime2Elem) myTimelineTime2Elem.innerText = data.myTimelineTime2 || 'No data';
-    if (myTimelineTime3Elem) myTimelineTime3Elem.innerText = data.myTimelineTime3 || 'No data';
-    if (myTimelineTime4Elem) myTimelineTime4Elem.innerText = data.myTimelineTime4 || 'No data';
-  }
+  //   if (projectNameElem) projectNameElem.innerText = `Project Name: ${data.projectName || 'No data'}`;
+  //   if (companyNameElem) companyNameElem.innerText = `Company Name: ${data.companyName || 'No data'}`;
+  //   if (dueDate1Elem) dueDate1Elem.innerText = `Due Date: ${data.dueDate1 || 'No data'}`;
+  //   if (projectName2Elem) projectName2Elem.innerText = `Project Name: ${data.projectName2 || 'No data'}`;
+  //   if (companyName2Elem) companyName2Elem.innerText = `Company Name: ${data.companyName2 || 'No data'}`;
+  //   if (dueDate2Elem) dueDate2Elem.innerText = `Due Date: ${data.dueDate2 || 'No data'}`;
+  //   if (myTask1Elem) myTask1Elem.innerText = data.myTask1 || 'No data';
+  //   if (myTask2Elem) myTask2Elem.innerText = data.myTask2 || 'No data';
+  //   if (myTask3Elem) myTask3Elem.innerText = data.myTask3 || 'No data';
+  //   if (myTask4Elem) myTask4Elem.innerText = data.myTask4 || 'No data';
+  //   if (myTask5Elem) myTask5Elem.innerText = data.myTask5 || 'No data';
+  //   if (myTask6Elem) myTask6Elem.innerText = data.myTask6 || 'No data';
+  //   if (myTask7Elem) myTask7Elem.innerText = data.myTask7 || 'No data';
+  //   if (myTimeline1Elem) myTimeline1Elem.innerText = data.myTimeline1 || 'No data';
+  //   if (myTimeline2Elem) myTimeline2Elem.innerText = data.myTimeline2 || 'No data';
+  //   if (myTimeline3Elem) myTimeline3Elem.innerText = data.myTimeline3 || 'No data';
+  //   if (myTimeline4Elem) myTimeline4Elem.innerText = data.myTimeline4 || 'No data';
+  //   if (myTimelineTime1Elem) myTimelineTime1Elem.innerText = data.myTimelineTime1 || 'No data';
+  //   if (myTimelineTime2Elem) myTimelineTime2Elem.innerText = data.myTimelineTime2 || 'No data';
+  //   if (myTimelineTime3Elem) myTimelineTime3Elem.innerText = data.myTimelineTime3 || 'No data';
+  //   if (myTimelineTime4Elem) myTimelineTime4Elem.innerText = data.myTimelineTime4 || 'No data';
+  // }
   
 //   function updateSafetyDOM(data) {
 //     console.log(data);
