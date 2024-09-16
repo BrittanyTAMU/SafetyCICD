@@ -194,99 +194,99 @@ app.get('/submit', (req, res) => {
 });
 
 // Handle form submission
-app.post('/submit-project', (req, res) => {
-  const {
-    projectName, companyName, dueDate1, projectName2, companyName2, dueDate2, myTask1, myTask2, myTask3,
-    myTask4, myTask5, myTask6, myTask7, myTimeline1, myTimeline2, myTimeline3, myTimeline4, myTimelineTime1,
-    myTimelineTime2, myTimelineTime3, myTimelineTime4, dueDate3, recordNumber, location, incidentDate,
-    incidentTime, immediateResponse, totalCost, owner, project, wind, immediateResponse2, bestActions, descriptionOfEvents, reporters, time, task, owner2, recordNumber2, recordNumber3, recordNumber4, recordNumber5, daSD, daED, daMP, daRB,  jrSD, jrED, jrMP, jrRB, da2SD, da2ED, da2MP, da2RB,rtwSD, rtwED, rtwMP, rtwRB, eventDescription, immediateResponse3, bestActions2, reporters2, location2, incidentDate2, incidentTime2, project2, type, owner3, severity, weather, substance, eventDescription2, actionTaken, remediation, prevent, responsible, reporters3, location3,
-    incidentDate3,
-    incidentTime3,
-    project3,
-    damage,
-    owner4,
-    extent,
-    eventDescription3,
-    remediation2, immediateActions2,
-    repair, prevent2, 
-    responsible2, location4,
-    incidentDate4,
-    incidentTime4,
-    project4,
-    vehicle,
-    owner5,
-    driver,
-    eventDescription4,
-    immediateActions,
-    repair2, prevent3,
-    responsible3, reporters5,
-    location5,
-    incidentDates5,
-    incidentTime5,
-    project5,
-    security,
-    owner6,
-    extent2,
-    eventDescription5, immediate,
-    repair3,
-    prevent5,
-    responsible4
-  } = req.body;
+// app.post('/submit-project', (req, res) => {
+//   const {
+//     projectName, companyName, dueDate1, projectName2, companyName2, dueDate2, myTask1, myTask2, myTask3,
+//     myTask4, myTask5, myTask6, myTask7, myTimeline1, myTimeline2, myTimeline3, myTimeline4, myTimelineTime1,
+//     myTimelineTime2, myTimelineTime3, myTimelineTime4, dueDate3, recordNumber, location, incidentDate,
+//     incidentTime, immediateResponse, totalCost, owner, project, wind, immediateResponse2, bestActions, descriptionOfEvents, reporters, time, task, owner2, recordNumber2, recordNumber3, recordNumber4, recordNumber5, daSD, daED, daMP, daRB,  jrSD, jrED, jrMP, jrRB, da2SD, da2ED, da2MP, da2RB,rtwSD, rtwED, rtwMP, rtwRB, eventDescription, immediateResponse3, bestActions2, reporters2, location2, incidentDate2, incidentTime2, project2, type, owner3, severity, weather, substance, eventDescription2, actionTaken, remediation, prevent, responsible, reporters3, location3,
+//     incidentDate3,
+//     incidentTime3,
+//     project3,
+//     damage,
+//     owner4,
+//     extent,
+//     eventDescription3,
+//     remediation2, immediateActions2,
+//     repair, prevent2, 
+//     responsible2, location4,
+//     incidentDate4,
+//     incidentTime4,
+//     project4,
+//     vehicle,
+//     owner5,
+//     driver,
+//     eventDescription4,
+//     immediateActions,
+//     repair2, prevent3,
+//     responsible3, reporters5,
+//     location5,
+//     incidentDates5,
+//     incidentTime5,
+//     project5,
+//     security,
+//     owner6,
+//     extent2,
+//     eventDescription5, immediate,
+//     repair3,
+//     prevent5,
+//     responsible4
+//   } = req.body;
 
-  const id = uuidv4(); // Generate a unique ID for the project
+//   const id = uuidv4(); // Generate a unique ID for the project
 
-  const params = {
-    TableName: 'Construction',
-    Item: {
-      id,
-      entryType: 'Project', // Ensure this is a project entry
-      projectName, companyName, dueDate1, projectName2, companyName2, dueDate2, myTask1, myTask2, myTask3,
-    myTask4, myTask5, myTask6, myTask7, myTimeline1, myTimeline2, myTimeline3, myTimeline4, myTimelineTime1,
-    myTimelineTime2, myTimelineTime3, myTimelineTime4, dueDate3, recordNumber, location, incidentDate,
-    incidentTime, immediateResponse, totalCost, owner, project, wind, immediateResponse2, bestActions, descriptionOfEvents, reporters, time, task, owner2, recordNumber2, recordNumber3, recordNumber4, recordNumber5, daSD, daED, daMP, daRB,  jrSD, jrED, jrMP, jrRB, da2SD, da2ED, da2MP, da2RB,rtwSD, rtwED, rtwMP, rtwRB, eventDescription, immediateResponse3, bestActions2, reporters2, location2, incidentDate2, incidentTime2, project2, type, owner3, severity, weather, substance, eventDescription2, actionTaken, remediation, prevent, responsible, reporters3, location3,
-    incidentDate3,
-    incidentTime3,
-    project3,
-    damage,
-    owner4,
-    extent,
-    eventDescription3,
-    remediation2, immediateActions2,
-    repair, prevent2, 
-    responsible2, location4,
-    incidentDate4,
-    incidentTime4,
-    project4,
-    vehicle,
-    owner5,
-    driver,
-    eventDescription4,
-    immediateActions,
-    repair2, prevent3,
-    responsible3, reporters5,
-    location5,
-    incidentDates5,
-    incidentTime5,
-    project5,
-    security,
-    owner6,
-    extent2,
-    eventDescription5, immediate,
-    repair3,
-    prevent5,
-    responsible4, 
-    }
-  };
+//   const params = {
+//     TableName: 'Construction',
+//     Item: {
+//       id,
+//       entryType: 'Project', // Ensure this is a project entry
+//       projectName, companyName, dueDate1, projectName2, companyName2, dueDate2, myTask1, myTask2, myTask3,
+//     myTask4, myTask5, myTask6, myTask7, myTimeline1, myTimeline2, myTimeline3, myTimeline4, myTimelineTime1,
+//     myTimelineTime2, myTimelineTime3, myTimelineTime4, dueDate3, recordNumber, location, incidentDate,
+//     incidentTime, immediateResponse, totalCost, owner, project, wind, immediateResponse2, bestActions, descriptionOfEvents, reporters, time, task, owner2, recordNumber2, recordNumber3, recordNumber4, recordNumber5, daSD, daED, daMP, daRB,  jrSD, jrED, jrMP, jrRB, da2SD, da2ED, da2MP, da2RB,rtwSD, rtwED, rtwMP, rtwRB, eventDescription, immediateResponse3, bestActions2, reporters2, location2, incidentDate2, incidentTime2, project2, type, owner3, severity, weather, substance, eventDescription2, actionTaken, remediation, prevent, responsible, reporters3, location3,
+//     incidentDate3,
+//     incidentTime3,
+//     project3,
+//     damage,
+//     owner4,
+//     extent,
+//     eventDescription3,
+//     remediation2, immediateActions2,
+//     repair, prevent2, 
+//     responsible2, location4,
+//     incidentDate4,
+//     incidentTime4,
+//     project4,
+//     vehicle,
+//     owner5,
+//     driver,
+//     eventDescription4,
+//     immediateActions,
+//     repair2, prevent3,
+//     responsible3, reporters5,
+//     location5,
+//     incidentDates5,
+//     incidentTime5,
+//     project5,
+//     security,
+//     owner6,
+//     extent2,
+//     eventDescription5, immediate,
+//     repair3,
+//     prevent5,
+//     responsible4, 
+//     }
+//   };
 
-  dynamoDB.put(params, (err) => {
-    if (err) {
-      console.error('Error saving project:', err);
-      res.status(500).send('Error saving project');
-    } else {
-      res.redirect('/cons_project/dashboard.html');
-    }
-  });
-});
+//   dynamoDB.put(params, (err) => {
+//     if (err) {
+//       console.error('Error saving project:', err);
+//       res.status(500).send('Error saving project');
+//     } else {
+//       res.redirect('/cons_project/dashboard.html');
+//     }
+//   });
+// });
 
 // Serve the page that displays project details
 app.get('/display', (req, res) => {
@@ -294,28 +294,28 @@ app.get('/display', (req, res) => {
 });
 
 // API to get the latest project details
-app.get('/api/get-latest-project', (req, res) => {
-  const params = {
-    TableName: 'Construction'
-  };
+// app.get('/api/get-latest-project', (req, res) => {
+//   const params = {
+//     TableName: 'Construction'
+//   };
 
-  dynamoDB.scan(params, (err, data) => {
-    if (err) {
-      console.error('Error fetching project:', err);
-      res.status(500).send('Error fetching project');
-    } else {
-      const projects = data.Items.filter(item => item.entryType === 'Project');
-      if (projects.length > 0) {
-        const latestProject = projects.reduce((latest, project) => {
-          return (new Date(project.dueDate1) > new Date(latest.dueDate1)) ? project : latest;
-        });
-        res.json(latestProject);
-      } else {
-        res.json({});
-      }
-    }
-  });
-});
+//   dynamoDB.scan(params, (err, data) => {
+//     if (err) {
+//       console.error('Error fetching project:', err);
+//       res.status(500).send('Error fetching project');
+//     } else {
+//       const projects = data.Items.filter(item => item.entryType === 'Project');
+//       if (projects.length > 0) {
+//         const latestProject = projects.reduce((latest, project) => {
+//           return (new Date(project.dueDate1) > new Date(latest.dueDate1)) ? project : latest;
+//         });
+//         res.json(latestProject);
+//       } else {
+//         res.json({});
+//       }
+//     }
+//   });
+// });
 
 // Serve the page that displays safety event details
 app.get('/display-safety', (req, res) => {
