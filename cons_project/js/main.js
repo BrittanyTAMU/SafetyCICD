@@ -33,33 +33,72 @@ window.onclick = (e) => {
     }
 };
 
+const AWS = require('aws-sdk'); // Import the AWS SDK
+const fetch = require('node-fetch'); // Use fetch for making HTTP requests (if running in Node.js)
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/get-latest-project')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Fetched Data:', data); // Log the entire data object
-        updateDOM(data);
-      })
-      .catch(error => console.error('Error fetching project:', error));
+// Define API Gateway URL
+const apiUrl = 'https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-project';  // Replace with your API Gateway URL
+
+// Function to sign the request using AWS SDK
+async function makeSignedRequest() {
+  const endpoint = new AWS.Endpoint(apiUrl);
+  const request = new AWS.HttpRequest(endpoint, AWS.config.region);
+ 
+    // Add necessary request properties
+  request.method = 'GET';
+  request.headers['host'] = endpoint.host;
+  request.headers['Content-Type'] = 'application/json';
+  request.path = '/prod/get-project'; // Path after the domain
+  request.body = ''; // Empty for GET requests
+
+// Sign the request using AWS Signature V4
+  const signer = new AWS.Signers.V4(request, 'execute-api'); // API Gateway service is 'execute-api'
+  signer.addAuthorization(AWS.config.credentials, new Date());
+
+  // Use fetch to send the signed request
+  try {
+    const response = await fetch(apiUrl, {
+      method: request.method,
+      headers: request.headers
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     fetch('/api/get-latest-project')
+//       .then(response => response.json())
+//       .then(data => {
+//         console.log('Fetched Data:', data); // Log the entire data object
+//         updateDOM(data);
+//       })
+//       .catch(error => console.error('Error fetching project:', error));
   
-  });
+//   });
 
-async function updateDOM() {
-    const apiUrl = 'https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-project';  // Replace with your API Gateway URL
-    try {
-        const response = await fetch(apiUrl, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+// async function updateDOM() {
+//     const apiUrl = 'https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-project';  // Replace with your API Gateway URL
+//     try {
+//         const response = await fetch(apiUrl, {
+//             method: 'GET',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         });
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
         
-        const data = await response.json();
+//         const data = await response.json();
         
         // Update DOM elements with the data
         const projectNameElem = document.getElementById('projectName');
@@ -111,9 +150,11 @@ async function updateDOM() {
         console.error('Error fetching project data:', error);
     }
 }
+// Call the function to make the signed request
+makeSignedRequest();
 
 // Call the function when you need to update the DOM
-updateDOM();
+// updateDOM();
 
   
  //function updateDOM(data) {
