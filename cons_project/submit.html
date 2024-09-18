@@ -384,6 +384,17 @@
         <button type="submit">Submit</button>
     </form>
    <script>
+       const AWS = require('aws-sdk');
+const fetch = require('node-fetch');
+
+// Configure AWS SDK
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  sessionToken: process.env.AWS_SESSION_TOKEN, // Only needed if using temporary credentials
+  region: 'us-east-1' // Set your AWS region
+});
+
        // Sign the request using AWS Signature V4
   const signer = new AWS.Signers.V4(request, 'execute-api'); // API Gateway service is 'execute-api'
   signer.addAuthorization(AWS.config.credentials, new Date());
