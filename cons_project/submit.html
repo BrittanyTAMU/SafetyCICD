@@ -384,6 +384,10 @@
         <button type="submit">Submit</button>
     </form>
    <script>
+       // Sign the request using AWS Signature V4
+  const signer = new AWS.Signers.V4(request, 'execute-api'); // API Gateway service is 'execute-api'
+  signer.addAuthorization(AWS.config.credentials, new Date());
+       
     document.getElementById('submissionForm').addEventListener('submit', async (event) => {
         event.preventDefault();
 
