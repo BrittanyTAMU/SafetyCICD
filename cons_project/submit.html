@@ -383,36 +383,32 @@
         <br>  
         <button type="submit">Submit</button>
     </form>
-    <script>
-          //Adding data to dynamoDB and adding it to the DOM
-    const dynamoDB = new AWS.DynamoDB.DocumentClient(); // Create a new instance of the DynamoDB Document Client 
+   <script>
+    document.getElementById('submissionForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-        const AWS = require('aws-sdk'); // Import the AWS SDK to interact with AWS services
-        // Configure AWS SDK
-AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
-  });
-        document.getElementById('submissionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
 
-    const formData = new FormData(this);
-    const data = {};
-    formData.forEach((value, key) => { data[key] = value });
+        try {
+            const response = await fetch('https://67yjojavxd.execute-api.us-east-1.amazonaws.com/prod/submit-project', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-    fetch('https://67yjojavxd.execute-api.us-east-1.amazonaws.com/prod/submit-project', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => console.log('Success:', data))
-    .catch((error) => console.error('Error:', error));
-});
-
-    </script>
+            if (response.ok) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('Failed to submit form.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred.');
+        }
+    });
+</script>
 </body>
 </html>
