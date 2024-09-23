@@ -9,7 +9,7 @@
     <h1>Submission Form for App</h1>
     <h2>Submission form for Dashboard</h2>
 
-    <form action="/submit-project" method="post">
+    <form id="myForm" action="/submit-project" method="post">
         <label for="projectName">Project 1 Name:</label>
         <input type="text" id="projectName" name="projectName" required>
         <br>
@@ -384,46 +384,156 @@
         <button type="submit">Submit</button>
     </form>
    <script>
-       const AWS = require('aws-sdk');
-const fetch = require('node-fetch');
 
-// Configure AWS SDK
-AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  sessionToken: process.env.AWS_SESSION_TOKEN, // Only needed if using temporary credentials
-  region: 'us-east-1' // Set your AWS region
-});
+const form = document.getElementById('myForm');
 
-       // Sign the request using AWS Signature V4
-  const signer = new AWS.Signers.V4(request, 'execute-api'); // API Gateway service is 'execute-api'
-  signer.addAuthorization(AWS.config.credentials, new Date());
-       
-    document.getElementById('submissionForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the form from submitting the default way
 
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData);
+    // Collect form data
+    const data = {
+      const data = {
+  projectName: document.getElementById('projectName').value,
+  companyName: document.getElementById('companyName').value,
+  dueDate1: document.getElementById('dueDate1').value,
+  projectName2: document.getElementById('projectName2').value,
+  companyName2: document.getElementById('companyName2').value,
+  dueDate2: document.getElementById('dueDate2').value,
+  myTask1: document.getElementById('myTask1').value,
+  myTask2: document.getElementById('myTask2').value,
+  myTask3: document.getElementById('myTask3').value,
+  myTask4: document.getElementById('myTask4').value,
+  myTask5: document.getElementById('myTask5').value,
+  myTask6: document.getElementById('myTask6').value,
+  myTask7: document.getElementById('myTask7').value,
+  myTimeline1: document.getElementById('myTimeline1').value,
+  myTimeline2: document.getElementById('myTimeline2').value,
+  myTimeline3: document.getElementById('myTimeline3').value,
+  myTimeline4: document.getElementById('myTimeline4').value,
+  myTimelineTime1: document.getElementById('myTimelineTime1').value,
+  myTimelineTime2: document.getElementById('myTimelineTime2').value,
+  myTimelineTime3: document.getElementById('myTimelineTime3').value,
+  myTimelineTime4: document.getElementById('myTimelineTime4').value,
+  dueDate3: document.getElementById('dueDate3').value,
+  recordNumber: document.getElementById('recordNumber').value,
+  location: document.getElementById('location').value,
+  incidentDate: document.getElementById('incidentDate').value,
+  incidentTime: document.getElementById('incidentTime').value,
+  immediateResponse: document.getElementById('immediateResponse').value,
+  totalCost: document.getElementById('totalCost').value,
+  owner: document.getElementById('owner').value,
+  project: document.getElementById('project').value,
+  wind: document.getElementById('wind').value,
+  immediateResponse2: document.getElementById('immediateResponse2').value,
+  bestActions: document.getElementById('bestActions').value,
+  descriptionOfEvents: document.getElementById('descriptionOfEvents').value,
+  reporters: document.getElementById('reporters').value,
+  time: document.getElementById('time').value,
+  task: document.getElementById('task').value,
+  owner2: document.getElementById('owner2').value,
+  recordNumber2: document.getElementById('recordNumber2').value,
+  recordNumber3: document.getElementById('recordNumber3').value,
+  recordNumber4: document.getElementById('recordNumber4').value,
+  recordNumber5: document.getElementById('recordNumber5').value,
+  daSD: document.getElementById('daSD').value,
+  daED: document.getElementById('daED').value,
+  daMP: document.getElementById('daMP').value,
+  daRB: document.getElementById('daRB').value,
+  jrSD: document.getElementById('jrSD').value,
+  jrED: document.getElementById('jrED').value,
+  jrMP: document.getElementById('jrMP').value,
+  jrRB: document.getElementById('jrRB').value,
+  da2SD: document.getElementById('da2SD').value,
+  da2ED: document.getElementById('da2ED').value,
+  da2MP: document.getElementById('da2MP').value,
+  da2RB: document.getElementById('da2RB').value,
+  rtwSD: document.getElementById('rtwSD').value,
+  rtwED: document.getElementById('rtwED').value,
+  rtwMP: document.getElementById('rtwMP').value,
+  rtwRB: document.getElementById('rtwRB').value,
+  eventDescription: document.getElementById('eventDescription').value,
+  immediateResponse3: document.getElementById('immediateResponse3').value,
+  bestActions2: document.getElementById('bestActions2').value,
+  reporters2: document.getElementById('reporters2').value,
+  location2: document.getElementById('location2').value,
+  incidentDate2: document.getElementById('incidentDate2').value,
+  incidentTime2: document.getElementById('incidentTime2').value,
+  project2: document.getElementById('project2').value,
+  type: document.getElementById('type').value,
+  owner3: document.getElementById('owner3').value,
+  severity: document.getElementById('severity').value,
+  weather: document.getElementById('weather').value,
+  substance: document.getElementById('substance').value,
+  eventDescription2: document.getElementById('eventDescription2').value,
+  actionTaken: document.getElementById('actionTaken').value,
+  remediation: document.getElementById('remediation').value,
+  prevent: document.getElementById('prevent').value,
+  responsible: document.getElementById('responsible').value,
+  reporters3: document.getElementById('reporters3').value,
+  location3: document.getElementById('location3').value,
+  incidentDate3: document.getElementById('incidentDate3').value,
+  incidentTime3: document.getElementById('incidentTime3').value,
+  project3: document.getElementById('project3').value,
+  damage: document.getElementById('damage').value,
+  owner4: document.getElementById('owner4').value,
+  extent: document.getElementById('extent').value,
+  eventDescription3: document.getElementById('eventDescription3').value,
+  remediation2: document.getElementById('remediation2').value,
+  immediateActions2: document.getElementById('immediateActions2').value,
+  repair: document.getElementById('repair').value,
+  prevent2: document.getElementById('prevent2').value,
+  responsible2: document.getElementById('responsible2').value,
+  location4: document.getElementById('location4').value,
+  incidentDate4: document.getElementById('incidentDate4').value,
+  incidentTime4: document.getElementById('incidentTime4').value,
+  project4: document.getElementById('project4').value,
+  vehicle: document.getElementById('vehicle').value,
+  owner5: document.getElementById('owner5').value,
+  driver: document.getElementById('driver').value,
+  eventDescription4: document.getElementById('eventDescription4').value,
+  immediateActions: document.getElementById('immediateActions').value,
+  repair2: document.getElementById('repair2').value,
+  prevent3: document.getElementById('prevent3').value,
+  responsible3: document.getElementById('responsible3').value,
+  reporters5: document.getElementById('reporters5').value,
+  location5: document.getElementById('location5').value,
+  incidentDates5: document.getElementById('incidentDates5').value,
+  incidentTime5: document.getElementById('incidentTime5').value,
+  project5: document.getElementById('project5').value,
+  security: document.getElementById('security').value,
+  owner6: document.getElementById('owner6').value,
+  extent2: document.getElementById('extent2').value,
+  eventDescription5: document.getElementById('eventDescription5').value,
+  immediate: document.getElementById('immediate').value,
+  repair3: document.getElementById('repair3').value,
+  prevent5: document.getElementById('prevent5').value,
+  responsible4: document.getElementById('responsible4').value
+};
 
-        try {
-            const response = await fetch('https://67yjojavxd.execute-api.us-east-1.amazonaws.com/prod/submit-project', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+    };
 
-            if (response.ok) {
-                alert('Form submitted successfully!');
-            } else {
-                alert('Failed to submit form.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred.');
-        }
-    });
+    try {
+      // Send the data to your API Gateway endpoint
+      const response = await fetch('https://67yjojavxd.execute-api.us-east-1.amazonaws.com/prod/submit-project', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Form submitted successfully!');
+      } else {
+        alert('Failed to submit form.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred.');
+    }
+  });
+
+
 </script>
 </body>
 </html>
