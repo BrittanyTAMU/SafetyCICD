@@ -385,7 +385,12 @@
     </form>
    <script>
 
+document.getElementById('myForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevents page reload
+    await submitForm();
+});
 
+       
 async function submitForm() {
     const data = {
     projectName: document.getElementById('projectName').value,
