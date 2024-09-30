@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Project</title>
+    <link rel="icon" href="/path/to/your/favicon.ico">
+
 </head>
 <body>
     <h1>Submission Form for App</h1>
@@ -383,7 +385,7 @@
         <br>  
         <button type="submit" onclick="submitForm()">Submit</button>
     </form>
-   <script>
+  <script>
 
 document.getElementById('myForm').addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -543,7 +545,7 @@ async function submitForm(data) {
     alert('An error occurred.');
   }
 }
-
+const AWS = require('aws-sdk'); // Import the AWS SDK to interact with AWS services
 // AWS Config (best handled in backend)
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
