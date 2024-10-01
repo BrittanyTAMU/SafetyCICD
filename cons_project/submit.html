@@ -395,6 +395,10 @@
             const response = await submitForm(); // Call the function to submit the form
             if (response.ok) {
                 alert('Form submitted successfully!');
+                 // Redirect to the dashboard after alert
+            setTimeout(function() {
+                window.location.href = 'https://your-dashboard-url.com';  // Replace with your actual dashboard URL
+            }, 100); // 100ms delay to ensure the alert is displayed
             } else {
                 const errorData = await response.json();
                 alert('Failed to submit form: ' + errorData.message);
