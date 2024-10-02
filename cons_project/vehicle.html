@@ -563,7 +563,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-vehicle')  // Replace with your real API URL
-        .then(response => response.json())
+         .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             console.log('Fetched Vehicle Data:', data);
             updateVehicleDOM(data);
@@ -572,18 +577,18 @@
 });
 
 function updateVehicleDOM(data) {
-    document.getElementById('location4').value = data.location4 || 'No data';
-    document.getElementById('incidentDate4').value = data.incidentDate4 || 'No data';
-    document.getElementById('incidentTime4').value = data.incidentTime4 || 'No data';
-    document.getElementById('project4').value = data.project4 || 'No data';
-    document.getElementById('vehicle').value = data.vehicle || 'No data';
-    document.getElementById('owner5').value = data.owner5 || 'No data';
-    document.getElementById('driver').value = data.driver || 'No data';
-    document.getElementById('eventDescription4').value = data.eventDescription4 || 'No data';
-    document.getElementById('immediateActions').value = data.immediateActions || 'No data';
-    document.getElementById('repair2').value = data.repair2 || 'No data';
-    document.getElementById('prevent2').value = data.prevent2 || 'No data';
-    document.getElementById('responsible3').value = data.responsible3 || 'No data';
+    document.getElementById('location4').innerText = data.location4 || 'No data';
+    document.getElementById('incidentDate4').innerText = data.incidentDate4 || 'No data';
+    document.getElementById('incidentTime4').innerText = data.incidentTime4 || 'No data';
+    document.getElementById('project4').innerText = data.project4 || 'No data';
+    document.getElementById('vehicle').innerText = data.vehicle || 'No data';
+    document.getElementById('owner5').innerText = data.owner5 || 'No data';
+    document.getElementById('driver').innerText = data.driver || 'No data';
+    document.getElementById('eventDescription4').innerText = data.eventDescription4 || 'No data';
+    document.getElementById('immediateActions').innerText = data.immediateActions || 'No data';
+    document.getElementById('repair2').innerText = data.repair2 || 'No data';
+    document.getElementById('prevent2').innerText = data.prevent2 || 'No data';
+    document.getElementById('responsible3').innerText = data.responsible3 || 'No data';
 }
 
 </script>
