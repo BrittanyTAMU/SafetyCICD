@@ -562,7 +562,12 @@
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-vehicle')  // Replace with your real API URL
+     fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-vehicle', {  // Corrected API URL and fetch method
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }) 
          .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
