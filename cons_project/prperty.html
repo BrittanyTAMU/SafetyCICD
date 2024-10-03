@@ -560,6 +560,45 @@
         </main>
     </div>
 </div>
-<script src="js/mainProp.js"></script> 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-property', {  // Corrected API URL and fetch method
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Fetched property Data:', data);
+        if (data && data.length > 0) {  // Ensure there's data before updating the DOM
+            updatePropertyDOM(data[0]);  // Assuming you want to show the first property's data
+        }
+    })
+    .catch(error => console.error('Error fetching property data:', error));
+});
+
+function updatePropertyDOM(property) {  // Changed 'vehicle' to 'property'
+    document.getElementById('reporters3').innerText = property.reporters3 || 'No data';
+    document.getElementById('location3').innerText = property.location3 || 'No data';
+    document.getElementById('incidentDate3').innerText = property.incidentDate3 || 'No data';
+    document.getElementById('incidentTime3').innerText = property.incidentTime3 || 'No data';
+    document.getElementById('project3').innerText = property.project3 || 'No data';
+    document.getElementById('damage').innerText = property.damage || 'No data';
+    document.getElementById('owner4').innerText = property.owner4 || 'No data';
+    document.getElementById('extent').innerText = property.extent || 'No data';
+    document.getElementById('eventDescription3').innerText = property.eventDescription3 || 'No data';
+    document.getElementById('remediation2').innerText = property.remediation2 || 'No data';
+    document.getElementById('immediateActions2').innerText = property.immediateActions2 || 'No data';
+    document.getElementById('repair').innerText = property.repair || 'No data';
+    document.getElementById('prevent2').innerText = property.prevent2 || 'No data';
+    document.getElementById('responsible2').innerText = property.responsible2 || 'No data';
+}
+</script> 
 </body>
 </html>
