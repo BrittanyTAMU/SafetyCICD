@@ -583,7 +583,7 @@
     .catch(error => console.error('Error fetching security data:', error));
 });
 
-function updateSecurityDOM(vehicle) {
+function updateSecurityDOM(security) {
     // Make sure `security` exists before updating the DOM
     document.getElementById('reporters5').innerText = vehicle.reporters5 || 'No data';
     document.getElementById('location5').innerText = vehicle.location5 || 'No data';
