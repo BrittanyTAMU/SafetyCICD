@@ -177,7 +177,7 @@
         <main>
             <div class="projectCard">
                 <div class="projectTop">
-                    <h2 id="projectName">Project Name: <span id="companyName">Company Name:</span></h2>
+                    <h2 id="projectName">Project Name: <br><span id="companyName">Company Name:</span></h2>
 
                     <div class="projectDots">
                         <span class="material-symbols-outlined ">
@@ -549,7 +549,7 @@
 function updateDashboardDOM(dashboard) {
     // Make sure `dashboard` exists before updating the DOM
     document.getElementById('projectName').innerText = dashboard.projectName || 'No data';
-    document.getElementById('companyName').innerText = dashboard.companyName || 'No data';
+    //document.getElementById('companyName').innerText = dashboard.companyName || 'No data';
     document.getElementById('dueDate1').innerText = dashboard.dueDate1 || 'No data';
     document.getElementById('projectName2').innerText = dashboard.projectName2 || 'No data';
     //document.getElementById('companyName2').innerText = dashboard.companyName2 || 'No data';
