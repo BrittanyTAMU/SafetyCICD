@@ -560,6 +560,45 @@
         </main>
     </div>
 </div>
-<script src="js/mainSec.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-security', {  // Corrected API URL and fetch method
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Fetched Security Data:', data);
+        if (data && data.length > 0) {  // Ensure there's data before updating the DOM
+            updateSecurityDOM(data[0]);  // Assuming you want to show the first vehicle's data
+        }
+    })
+    .catch(error => console.error('Error fetching security data:', error));
+});
+
+function updateSecurityDOM(vehicle) {
+    // Make sure `security` exists before updating the DOM
+    document.getElementById('reporters5').innerText = vehicle.reporters5 || 'No data';
+    document.getElementById('location5').innerText = vehicle.location5 || 'No data';
+    document.getElementById('incidentDates5').innerText = vehicle.incidentDates5 || 'No data';
+    document.getElementById('incidentTime5').innerText = vehicle.incidentTime5 || 'No data';
+    document.getElementById('project5').innerText = vehicle.project5 || 'No data';
+    document.getElementById('security').innerText = vehicle.security || 'No data';
+    document.getElementById('owner6').innerText = vehicle.owner6 || 'No data';
+    document.getElementById('extent2').innerText = vehicle.extent2 || 'No data';
+    document.getElementById('eventDescription5').innerText = vehicle.eventDescription5 || 'No data';
+    document.getElementById('immediate').innerText = vehicle.immediate || 'No data';
+    document.getElementById('repair3').innerText = vehicle.repair3 || 'No data';
+    document.getElementById('prevent5').innerText = vehicle.prevent5 || 'No data';
+    document.getElementById('responsible4').innerText = vehicle.responsible4 || 'No data';
+}
+</script>
 </body>
 </html>
