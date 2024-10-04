@@ -610,6 +610,58 @@
     </div>
 </div>
 
-<script src="js/mainInjury.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-injury', {  // Corrected API URL and fetch method
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Fetched injury Data:', data);
+        if (data && data.length > 0) {  // Ensure there's data before updating the DOM
+            updateInjuryDOM(data[0]);  // Assuming you want to show the first injury's data
+        }
+    })
+    .catch(error => console.error('Error fetching injury data:', error));
+});
+
+function updateInjuryyDOM(injury) {  // Changed 'injury'
+    document.getElementById('reporters').innerText = property.reporters || 'No data';
+    document.getElementById('time').innerText = property.time || 'No data';
+    document.getElementById('task').innerText = property.task || 'No data';
+    document.getElementById('owner2').innerText = property.owner2 || 'No data';
+    document.getElementById('recordNumber2').innerText = property.recordNumber2 || 'No data';
+    document.getElementById('recordNumber3').innerText = property.recordNumber3 || 'No data';
+    document.getElementById('recordNumber4').innerText = property.recordNumber4 || 'No data';
+    document.getElementById('recordNumber5').innerText = property.recordNumber5 || 'No data';
+    document.getElementById('daSD').innerText = property.daSD || 'No data';
+    document.getElementById('daED').innerText = property.daED || 'No data';
+    document.getElementById('daMP').innerText = property.daMP || 'No data';
+    document.getElementById('daRB').innerText = property.daRB || 'No data';
+    document.getElementById('jrSD').innerText = property.jrSD || 'No data';
+    document.getElementById('jrED').innerText = property.jrED || 'No data';
+    document.getElementById('jrMP').innerText = property.jrMP || 'No data';
+    document.getElementById('jrRB').innerText = property.jrRB || 'No data';
+    document.getElementById('da2SD').innerText = property.da2SD || 'No data';
+    document.getElementById('da2ED').innerText = property.da2ED || 'No data';
+    document.getElementById('da2MP').innerText = property.da2MP || 'No data';
+    document.getElementById('da2RB').innerText = property.da2RB || 'No data';
+    document.getElementById('rtwSD').innerText = property.rtwSD || 'No data';
+    document.getElementById('rtwED').innerText = property.rtwED || 'No data';
+    document.getElementById('rtwMP').innerText = property.rtwMP || 'No data';
+    document.getElementById('rtwRB').innerText = property.rtwRB || 'No data';
+    document.getElementById('eventDescription').innerText = property.eventDescription || 'No data';
+    document.getElementById('immediateResponse3').innerText = property.immediateResponse3 || 'No data';
+    document.getElementById('bestActions2').innerText = property.bestActions2 || 'No data';
+}
+</script>
 </body>
 </html>
