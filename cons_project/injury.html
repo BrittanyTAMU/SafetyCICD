@@ -633,35 +633,36 @@
     .catch(error => console.error('Error fetching injury data:', error));
 });
 
-function updateInjuryyDOM(injury) {  // Changed 'injury'
-    document.getElementById('reporters').innerText = property.reporters || 'No data';
-    document.getElementById('time').innerText = property.time || 'No data';
-    document.getElementById('task').innerText = property.task || 'No data';
-    document.getElementById('owner2').innerText = property.owner2 || 'No data';
-    document.getElementById('recordNumber2').innerText = property.recordNumber2 || 'No data';
-    document.getElementById('recordNumber3').innerText = property.recordNumber3 || 'No data';
-    document.getElementById('recordNumber4').innerText = property.recordNumber4 || 'No data';
-    document.getElementById('recordNumber5').innerText = property.recordNumber5 || 'No data';
-    document.getElementById('daSD').innerText = property.daSD || 'No data';
-    document.getElementById('daED').innerText = property.daED || 'No data';
-    document.getElementById('daMP').innerText = property.daMP || 'No data';
-    document.getElementById('daRB').innerText = property.daRB || 'No data';
-    document.getElementById('jrSD').innerText = property.jrSD || 'No data';
-    document.getElementById('jrED').innerText = property.jrED || 'No data';
-    document.getElementById('jrMP').innerText = property.jrMP || 'No data';
-    document.getElementById('jrRB').innerText = property.jrRB || 'No data';
-    document.getElementById('da2SD').innerText = property.da2SD || 'No data';
-    document.getElementById('da2ED').innerText = property.da2ED || 'No data';
-    document.getElementById('da2MP').innerText = property.da2MP || 'No data';
-    document.getElementById('da2RB').innerText = property.da2RB || 'No data';
-    document.getElementById('rtwSD').innerText = property.rtwSD || 'No data';
-    document.getElementById('rtwED').innerText = property.rtwED || 'No data';
-    document.getElementById('rtwMP').innerText = property.rtwMP || 'No data';
-    document.getElementById('rtwRB').innerText = property.rtwRB || 'No data';
-    document.getElementById('eventDescription').innerText = property.eventDescription || 'No data';
-    document.getElementById('immediateResponse3').innerText = property.immediateResponse3 || 'No data';
-    document.getElementById('bestActions2').innerText = property.bestActions2 || 'No data';
+function updateInjuryDOM(injury) {  // Corrected function name
+    document.getElementById('reporters').innerText = injury.reporters || 'No data';
+    document.getElementById('time').innerText = injury.time || 'No data';
+    document.getElementById('task').innerText = injury.task || 'No data';
+    document.getElementById('owner2').innerText = injury.owner2 || 'No data';
+    document.getElementById('recordNumber2').innerText = injury.recordNumber2 || 'No data';
+    document.getElementById('recordNumber3').innerText = injury.recordNumber3 || 'No data';
+    document.getElementById('recordNumber4').innerText = injury.recordNumber4 || 'No data';
+    document.getElementById('recordNumber5').innerText = injury.recordNumber5 || 'No data';
+    document.getElementById('daSD').innerText = injury.daSD || 'No data';
+    document.getElementById('daED').innerText = injury.daED || 'No data';
+    document.getElementById('daMP').innerText = injury.daMP || 'No data';
+    document.getElementById('daRB').innerText = injury.daRB || 'No data';
+    document.getElementById('jrSD').innerText = injury.jrSD || 'No data';
+    document.getElementById('jrED').innerText = injury.jrED || 'No data';
+    document.getElementById('jrMP').innerText = injury.jrMP || 'No data';
+    document.getElementById('jrRB').innerText = injury.jrRB || 'No data';
+    document.getElementById('da2SD').innerText = injury.da2SD || 'No data';
+    document.getElementById('da2ED').innerText = injury.da2ED || 'No data';
+    document.getElementById('da2MP').innerText = injury.da2MP || 'No data';
+    document.getElementById('da2RB').innerText = injury.da2RB || 'No data';
+    document.getElementById('rtwSD').innerText = injury.rtwSD || 'No data';
+    document.getElementById('rtwED').innerText = injury.rtwED || 'No data';
+    document.getElementById('rtwMP').innerText = injury.rtwMP || 'No data';
+    document.getElementById('rtwRB').innerText = injury.rtwRB || 'No data';
+    document.getElementById('eventDescription').innerText = injury.eventDescription || 'No data';
+    document.getElementById('immediateResponse3').innerText = injury.immediateResponse3 || 'No data';
+    document.getElementById('bestActions2').innerText = injury.bestActions2 || 'No data';
 }
+
 </script>
 </body>
 </html>
