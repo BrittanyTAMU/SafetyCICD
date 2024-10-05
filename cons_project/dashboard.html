@@ -523,53 +523,8 @@
     </div>
 </div>
    
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-dashboard', {  // Corrected API URL and fetch method
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Fetched dashboard Data:', data);
-        if (data && data.length > 0) {  // Ensure there's data before updating the DOM
-            updateDashboardDOM(data[0]);  // Assuming you want to show the first dashboard's data
-        }
-    })
-    .catch(error => console.error('Error fetching dashboard data:', error));
-});
-
-function updateDashboardDOM(dashboard) {
-    // Make sure `dashboard` exists before updating the DOM
-    document.getElementById('projectName').innerText = dashboard.projectName || 'No data';
-    //document.getElementById('companyName').innerText = dashboard.companyName || 'No data';
-    document.getElementById('dueDate1').innerText = dashboard.dueDate1 || 'No data';
-    document.getElementById('projectName2').innerText = dashboard.projectName2 || 'No data';
-    //document.getElementById('companyName2').innerText = dashboard.companyName2 || 'No data';
-    document.getElementById('dueDate2').innerText = dashboard.dueDate2 || 'No data';
-    document.getElementById('myTask1').innerText = dashboard.myTask1 || 'No data';
-    document.getElementById('myTask2').innerText = dashboard.myTask2 || 'No data';
-    document.getElementById('myTask3').innerText = dashboard.myTask3 || 'No data';
-    document.getElementById('myTask4').innerText = dashboard.myTask4 || 'No data';
-    document.getElementById('myTask5').innerText = dashboard.myTask5 || 'No data';
-    document.getElementById('myTask6').innerText = dashboard.myTask6 || 'No data';
-    document.getElementById('myTask7').innerText = dashboard.myTask7 || 'No data';
-    document.getElementById('myTimeline1').innerText = dashboard.myTimeline1 || 'No data';
-    document.getElementById('myTimeline2').innerText = dashboard.myTimeline2 || 'No data';
-    document.getElementById('myTimeline3').innerText = dashboard.myTimeline3 || 'No data';
-    document.getElementById('myTimeline4').innerText = dashboard.myTimeline4 || 'No data';
-    document.getElementById('myTimelineTime1').innerText = dashboard.myTimelineTime1 || 'No data';
-    document.getElementById('myTimelineTime2').innerText = dashboard.myTimelineTime2 || 'No data';
-    document.getElementById('myTimelineTime3').innerText = dashboard.myTimelineTime3 || 'No data';
-    document.getElementById('myTimelineTime4').innerText = dashboard.myTimelineTime4 || 'No data';
-}
+<script src="js/main.js">
+    
 </script>
 </body>
 </html>
