@@ -11,6 +11,9 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(#f4dbfb, #d8dbfe);
+    transform: scale(0.67); /* Simulates 67% zoom */
+    transform-origin: 0 0;  /* Adjusts zoom origin */
+    width: 150%;            /* Prevents content from being cut off */
 }
 
 ::-webkit-scrollbar{
