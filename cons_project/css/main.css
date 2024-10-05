@@ -1243,7 +1243,7 @@ body {
     }
 
     .container .right .top .user h2 {
-        font-size: 14px; /* Reduce font size instead of hiding */
+        font-size: 9px; /* Reduce font size instead of hiding */
 /*         display: none; */
     }
 }
