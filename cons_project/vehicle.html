@@ -560,45 +560,8 @@
         </main>
     </div>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-vehicle', {  // Corrected API URL and fetch method
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Fetched Vehicle Data:', data);
-        if (data && data.length > 0) {  // Ensure there's data before updating the DOM
-            updateVehicleDOM(data[0]);  // Assuming you want to show the first vehicle's data
-        }
-    })
-    .catch(error => console.error('Error fetching vehicle data:', error));
-});
-
-function updateVehicleDOM(vehicle) {
-    // Make sure `vehicle` exists before updating the DOM
-    document.getElementById('location4').innerText = vehicle.location4 || 'No data';
-    document.getElementById('incidentDate4').innerText = vehicle.incidentDate4 || 'No data';
-    document.getElementById('incidentTime4').innerText = vehicle.incidentTime4 || 'No data';
-    document.getElementById('project4').innerText = vehicle.project4 || 'No data';
-    document.getElementById('vehicle').innerText = vehicle.vehicle || 'No data';
-    document.getElementById('owner5').innerText = vehicle.owner5 || 'No data';
-    document.getElementById('driver').innerText = vehicle.driver || 'No data';
-    document.getElementById('eventDescription4').innerText = vehicle.eventDescription4 || 'No data';
-    document.getElementById('immediateActions').innerText = vehicle.immediateActions || 'No data';
-    document.getElementById('repair2').innerText = vehicle.repair2 || 'No data';
-    document.getElementById('prevent2').innerText = vehicle.prevent2 || 'No data';
-    document.getElementById('responsible3').innerText = vehicle.responsible3 || 'No data';
-}
-
+<script src="js/mainVeh.js">
+ 
 
 </script>
 </body>
