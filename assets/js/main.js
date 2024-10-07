@@ -11,6 +11,8 @@
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down...
+   monitors the user's scroll position and applies a scrolled class to the body when the user has scrolled more than 100 
+   pixels down the page. This class can be used to trigger CSS changes, such as altering the appearance of a header.
    */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
