@@ -409,27 +409,27 @@
     });
 
     async function submitForm() {
-        const formData = getFormData();
+        const formData = getFormData(); // Get form data as JSON
         
         return fetch('https://w4vdqvvixk.execute-api.us-east-1.amazonaws.com/prod/submit-project', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: formData
+            body: formData // Send the form data in the request body
         });
     }
 
     function getFormData() {
         const form = document.getElementById('myForm');
-        const data = new FormData(form);
+        const data = new FormData(form); // Create a FormData object
         const jsonData = {};
 
         data.forEach((value, key) => {
-            jsonData[key] = value;
+            jsonData[key] = value; // Populate jsonData object with key-value pairs
         });
 
-        return JSON.stringify(jsonData);
+        return JSON.stringify(jsonData); // Convert to JSON string
     }
 
 
