@@ -1,6 +1,3 @@
-Thanks for downloading this template!
+This repository holds my SafetyFirst365 webpage. Each file contains the code for the website along with my comments. I predominantly use JavaScript to tackle any challenges, showcasing its functionality. Moreover, I apply object-oriented programming (OOP) principles in my JavaScript code to create modular and reusable components for the calculators.
 
-Template Name: UpConstruction
-Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Lessons Learned: Through tackling these challenging and sometimes peculiar problems, I've honed my skills in writing more efficient JavaScript code. My primary aim is to enhance my proficiency in JavaScript, and engaging with a new challenge every day serves as a valuable tool for achieving that goal.
