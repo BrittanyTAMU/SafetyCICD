@@ -33,7 +33,7 @@ window.onclick = (e) => {
     }
 };
 
-const apiKey = "spdLDJjQik7PHhPIQX2rs2vv71Ga1Lyf8fRqCEN1";
+const apiKey = "spdLDJjQik7PHhPIQX2rs2vv71Ga1Lyf8fRqCEN1"; 
  document.addEventListener('DOMContentLoaded', () => {
         fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-safety', {
             method: 'GET',
