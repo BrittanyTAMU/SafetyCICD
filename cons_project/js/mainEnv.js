@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://ugi0om9n21.execute-api.us-east-1.amazonaws.com/prod/get-environment', {  // Corrected API URL and fetch method
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey 
+            'x-api-key': apiKey,
         },
     })
     .then(response => {
